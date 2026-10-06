@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en" data-theme="alien">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bizzle's Burner Hub v4.20</title>
+<meta name="description" content="Free disposable temp email (real inboxes via Guerrilla Mail, Maildrop and SpamOK with automatic fallback) plus Bizzy Bot, a free bring-your-own-key AI helper. Runs entirely in your browser.">
+<meta name="theme-color" content="#000000">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src 'self' data:; connect-src 'self' https://api.guerrillamail.com https://api.maildrop.cc https://api.spamok.com https://generativelanguage.googleapis.com https://api.groq.com https://openrouter.ai; frame-src 'self' about: data:; object-src 'none'; base-uri 'self'; form-action 'self'; manifest-src 'self'; worker-src 'self'">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bizzle's Burner Hub v4.20">
+<meta property="og:title" content="Bizzle's Burner Hub v4.20">
+<meta property="og:description" content="Free real temp email with auto-fallback + Bizzy Bot, a chill stoner-alien AI helper. No sign-up, runs in your browser.">
+<meta property="og:url" content="https://leehizzbt.github.io/bizzles-burner-hub/">
+<meta property="og:image" content="https://leehizzbt.github.io/bizzles-burner-hub/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Green stoner alien in a backwards cap: Bizzle's Burner Hub v4.20">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bizzle's Burner Hub v4.20">
+<meta name="twitter:description" content="Free real temp email with auto-fallback + Bizzy Bot AI helper.">
+<meta name="twitter:image" content="https://leehizzbt.github.io/bizzles-burner-hub/img/og-image.jpg">
+<link rel="canonical" href="https://leehizzbt.github.io/bizzles-burner-hub/">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Burner Hub">
+<link rel="preload" href="fonts/Orbitron.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <a class="brand" href="#/" aria-label="Bizzle's Burner Hub v4.20, home">
+    <img class="brand-logo" src="img/logo-256.webp" alt="" width="52" height="52">
+    <span class="brand-text">
+      <span class="brand-name">Bizzle's Burner Hub</span>
+      <span class="neon-ver" aria-hidden="true">v4.20</span>
+    </span>
+  </a>
+  <div class="top-actions">
+    <span id="offlinePill" class="pill pill-off" role="status" hidden>⚠ Offline</span>
+    <button id="installBtn" class="icon-btn" type="button" hidden title="Install app"><span aria-hidden="true">⬇</span><span class="lbl">Install</span></button>
+    <button id="shareBtn" class="icon-btn" type="button" title="Share this app"><span aria-hidden="true">🔗</span><span class="lbl">Share</span></button>
+    <a id="settingsBtn" class="icon-btn" href="#/settings" title="Advanced AI Settings (S)"><span aria-hidden="true">⚙️</span><span class="lbl">Settings</span></a>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <!-- HOME -->
+  <section class="view" id="view-home" data-route="home" aria-labelledby="homeTitle">
+    <h1 id="homeTitle" class="sr-only">Bizzle's Burner Hub home</h1>
+    <p class="hero-tag">Real burner inboxes + a chill alien AI. No sign-up. Everything stays in <em>your</em> browser.</p>
+    <div class="tiles">
+      <a class="tile" href="#/mail" id="tileMail">
+        <span class="tile-icon" aria-hidden="true">📬</span>
+        <span class="tile-title">Temp Email Hub</span>
+        <span class="tile-sub">Real disposable inboxes · auto-fallback · QR · multi-address</span>
+        <span class="tile-badge" id="tileMailBadge" hidden></span>
+      </a>
+      <a class="tile" href="#/bot" id="tileBot">
+        <img class="tile-avatar" src="img/bizzy-256.webp" alt="" width="96" height="96">
+        <span class="tile-title">Bizzy Bot</span>
+        <span class="tile-sub">Free AI helper · bring your own free key · vision · memory</span>
+      </a>
+    </div>
+    <div class="home-actions">
+      <a class="btn btn-big" href="#/settings" id="advSettingsBtn">⚙️ Advanced AI Settings</a>
+      <a class="btn btn-ghost" href="#/status">🛰️ Provider status &amp; honesty notes</a>
+      <button class="btn btn-ghost" type="button" data-action="shortcuts">⌨️ Shortcuts <kbd>?</kbd></button>
+    </div>
+    <div class="card honest">
+      <h2>What's real here</h2>
+      <ul>
+        <li><b>Temp mail is real:</b> addresses are created live on Guerrilla Mail, Maildrop or SpamOK, the free services that still allow browser access (checked Oct 5, 2026). Emails you get here are real.</li>
+        <li><b>Burner inboxes are not private vaults:</b> anyone who knows or guesses the inbox name can read it. Don't use these for banking or anything you need to recover later.</li>
+        <li><b>Bizzy Bot needs your own free API key</b> (Gemini, Groq or OpenRouter). Keys are stored only in this browser's localStorage and sent only to the provider you choose.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- MAIL -->
+  <section class="view" id="view-mail" data-route="mail" aria-labelledby="mailTitle" hidden>
+    <div class="view-head">
+      <button class="back-btn" type="button" data-back><span class="ufo" aria-hidden="true">🛸</span> Back</button>
+      <h1 id="mailTitle">📬 Temp Email Hub</h1>
+    </div>
+    <div id="mailNotice" class="notice" role="status" aria-live="polite" hidden></div>
+
+    <div class="mail-grid">
+      <div class="mail-col">
+        <div class="card addr-card" id="addrCard">
+          <div class="addr-empty" id="addrEmpty">
+            <p>No burner address yet. Make one — it's free and takes a second.</p>
+          </div>
+          <div class="addr-active" id="addrActive" hidden>
+            <div class="addr-row">
+              <code id="addrText" class="addr-text"></code>
+              <button class="btn btn-sm" type="button" id="copyAddrBtn" data-copy-target="addrText">📋 Copy</button>
+              <button class="btn btn-sm btn-ghost" type="button" id="qrBtn" aria-expanded="false" aria-controls="qrBox">🔳 QR</button>
+            </div>
+            <div class="addr-meta">
+              <span class="prov-badge" id="addrProvider"></span>
+              <label class="inline">Domain
+                <select id="domainSelect" aria-label="Domain for this address"></select>
+              </label>
+              <span id="aliasWrap" hidden><button class="btn btn-xs btn-ghost" type="button" id="copyAliasBtn" title="Scrambled alias: hides your inbox name from senders">🥷 Copy scrambled alias</button></span>
+            </div>
+            <div id="qrBox" class="qr-box" hidden><div id="qrSvg"></div><p class="small">Scan to copy this address to your phone.</p></div>
+            <p class="small privacy-note" id="addrPrivacy"></p>
+          </div>
+          <form class="new-addr" id="newAddrForm" autocomplete="off">
+            <div class="row wrap">
+              <label class="inline">Provider
+                <select id="newProvider" aria-label="Provider for new address"></select>
+              </label>
+              <label class="inline grow">Name (optional)
+                <input id="newUser" type="text" inputmode="email" pattern="[a-zA-Z0-9._\-]{0,40}" placeholder="random" maxlength="40" aria-describedby="newUserHelp">
+              </label>
+              <label class="inline">@
+                <select id="newDomain" aria-label="Domain for new address"></select>
+              </label>
+            </div>
+            <span id="newUserHelp" class="small">Letters, numbers, dot, dash, underscore. Leave empty for a random name.</span>
+            <div class="row wrap">
+              <button class="btn btn-primary" type="submit" id="genBtn">✨ Generate address <kbd>N</kbd></button>
+              <button class="btn btn-ghost" type="button" id="refreshBtn" disabled>🔄 Refresh <kbd>R</kbd></button>
+              <button class="btn btn-danger btn-ghost" type="button" id="delAddrBtn" disabled>🗑️ Delete address</button>
+            </div>
+          </form>
+          <div class="refresh-line small" id="refreshLine" aria-live="off"></div>
+        </div>
+
+        <div class="card">
+          <h2 class="h3">Saved addresses <span class="count" id="addrCount"></span></h2>
+          <ul class="addr-list" id="addrList" aria-label="Saved addresses"></ul>
+        </div>
+      </div>
+
+      <div class="mail-col">
+        <div class="card inbox-card">
+          <div class="row between"><h2 class="h3">Inbox <span class="count" id="msgCount"></span></h2><span class="small" id="lastChecked"></span></div>
+          <ul class="msg-list" id="msgList" aria-label="Messages" aria-live="polite"></ul>
+          <p class="empty small" id="msgEmpty">Waiting for mail… it shows up here automatically.</p>
+        </div>
+        <div class="card reader" id="reader" hidden>
+          <div class="reader-head">
+            <button class="back-btn" type="button" data-back><span class="ufo" aria-hidden="true">🛸</span> Back to inbox</button>
+            <div class="row wrap">
+              <button class="btn btn-sm" type="button" id="copyMsgBtn">📋 Copy text</button>
+              <button class="btn btn-sm btn-ghost" type="button" id="imgToggleBtn">🖼️ Load images</button>
+              <button class="btn btn-sm btn-danger btn-ghost" type="button" id="delMsgBtn">🗑️ Delete</button>
+            </div>
+          </div>
+          <h2 class="h3 reader-subj" id="readerSubject"></h2>
+          <p class="small" id="readerFrom"></p>
+          <div id="readerAtts" class="atts"></div>
+          <iframe id="readerFrame" title="Email content (sandboxed, scripts disabled)" sandbox="allow-popups allow-popups-to-escape-sandbox" referrerpolicy="no-referrer"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOT FULL PAGE -->
+  <section class="view" id="view-bot" data-route="bot" aria-labelledby="botTitle" hidden>
+    <div class="view-head">
+      <button class="back-btn" type="button" data-back><span class="ufo" aria-hidden="true">🛸</span> Back</button>
+      <h1 id="botTitle">🤖 Bizzy Bot</h1>
+    </div>
+    <div id="botPageSlot" class="bot-page-slot"></div>
+  </section>
+
+  <!-- STATUS -->
+  <section class="view" id="view-status" data-route="status" aria-labelledby="statusTitle" hidden>
+    <div class="view-head">
+      <button class="back-btn" type="button" data-back><span class="ufo" aria-hidden="true">🛸</span> Back</button>
+      <h1 id="statusTitle">🛰️ Provider status &amp; honesty notes</h1>
+    </div>
+    <div class="card">
+      <div class="row between"><h2 class="h3">Live temp-mail check (from your browser)</h2><button class="btn btn-sm" type="button" id="statusRunBtn">Re-check</button></div>
+      <table class="status-table"><thead><tr><th scope="col">Provider</th><th scope="col">Status</th><th scope="col">Notes</th></tr></thead><tbody id="statusBody"></tbody></table>
+    </div>
+    <div class="card">
+      <h2 class="h3">Checked but not usable from a website (Oct 5, 2026)</h2>
+      <ul class="plain" id="deadList"></ul>
+      <p class="small">"Not usable" means the browser blocks the request (no CORS permission for other websites) or the service is down. A server-side proxy could reach some of them, but that's a server this free static site doesn't have, so we don't fake it.</p>
+    </div>
+    <div class="card">
+      <h2 class="h3">Bizzy Bot AI backends</h2>
+      <table class="status-table"><thead><tr><th scope="col">Backend</th><th scope="col">Works directly in browser?</th><th scope="col">Free key</th></tr></thead><tbody id="aiStatusBody"></tbody></table>
+    </div>
+  </section>
+
+  <!-- SETTINGS -->
+  <section class="view" id="view-settings" data-route="settings" aria-labelledby="settingsTitle" hidden>
+    <div class="view-head">
+      <button class="back-btn" type="button" data-back><span class="ufo" aria-hidden="true">🛸</span> Back</button>
+      <h1 id="settingsTitle">⚙️ Advanced AI Settings</h1>
+    </div>
+
+    <div class="card">
+      <h2 class="h3">🎨 Theme</h2>
+      <div class="theme-grid" role="radiogroup" aria-label="Theme" id="themeGrid"></div>
+    </div>
+
+    <div class="card">
+      <h2 class="h3">🤖 Bizzy Bot AI</h2>
+      <div class="row wrap">
+        <label class="inline">AI backend
+          <select id="aiBackend">
+            <option value="gemini">Google Gemini (free tier)</option>
+            <option value="groq">Groq (free tier)</option>
+            <option value="openrouter">OpenRouter (:free models)</option>
+          </select>
+        </label>
+        <label class="inline grow">Model
+          <select id="aiModel"></select>
+        </label>
+        <button class="btn btn-sm btn-ghost" type="button" id="loadModelsBtn">🔃 Load live model list</button>
+      </div>
+      <label class="block">Custom model ID (optional, overrides the list)
+        <input id="aiCustomModel" type="text" placeholder="e.g. gemini-3.5-flash" spellcheck="false" autocomplete="off">
+      </label>
+      <p class="small" id="aiBackendNote"></p>
+      <div class="key-grid">
+        <div class="key-row" data-key="gemini">
+          <label for="key-gemini">Gemini API key <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">get free key ↗</a></label>
+          <div class="row"><input id="key-gemini" type="password" autocomplete="off" spellcheck="false" placeholder="AIza…"><button class="btn btn-xs btn-ghost" type="button" data-reveal="key-gemini" aria-label="Show or hide Gemini key">👁</button></div>
+          <span class="small key-saved" data-saved="gemini"></span>
+        </div>
+        <div class="key-row" data-key="groq">
+          <label for="key-groq">Groq API key <a href="https://console.groq.com/keys" target="_blank" rel="noopener">get free key ↗</a></label>
+          <div class="row"><input id="key-groq" type="password" autocomplete="off" spellcheck="false" placeholder="gsk_…"><button class="btn btn-xs btn-ghost" type="button" data-reveal="key-groq" aria-label="Show or hide Groq key">👁</button></div>
+          <span class="small key-saved" data-saved="groq"></span>
+        </div>
+        <div class="key-row" data-key="openrouter">
+          <label for="key-openrouter">OpenRouter API key <a href="https://openrouter.ai/keys" target="_blank" rel="noopener">get free key ↗</a></label>
+          <div class="row"><input id="key-openrouter" type="password" autocomplete="off" spellcheck="false" placeholder="sk-or-…"><button class="btn btn-xs btn-ghost" type="button" data-reveal="key-openrouter" aria-label="Show or hide OpenRouter key">👁</button></div>
+          <span class="small key-saved" data-saved="openrouter"></span>
+        </div>
+      </div>
+      <div class="row wrap">
+        <button class="btn btn-primary" type="button" id="saveKeysBtn">💾 Save keys</button>
+        <button class="btn btn-ghost" type="button" id="testKeyBtn">🧪 Test current backend</button>
+        <button class="btn btn-danger btn-ghost" type="button" id="wipeKeysBtn">🧹 Wipe all keys</button>
+      </div>
+      <p class="small warn">🔐 Keys are stored only in this browser's localStorage, sent only to the provider you pick, and never to us (there is no "us" server). Anyone with access to this browser profile could read them; use the wipe button on shared devices.</p>
+      <p class="small" id="keyTestResult" role="status" aria-live="polite"></p>
+      <hr>
+      <label class="switch"><input type="checkbox" id="memToggle"> <span>Memory: remember chat history and notes between visits (stored locally)</span></label>
+      <label class="block">Notes Bizzy should remember about you (optional)
+        <textarea id="aboutMe" rows="2" maxlength="1000" placeholder="e.g. Call me Bizzle. I like short answers."></textarea>
+      </label>
+      <div class="row wrap"><button class="btn btn-ghost btn-sm" type="button" id="clearMemBtn">🧽 Clear memory &amp; chat</button></div>
+    </div>
+
+    <div class="card">
+      <h2 class="h3">📬 Temp mail</h2>
+      <div class="row wrap">
+        <label class="inline">Preferred provider
+          <select id="mailProviderPref"></select>
+        </label>
+        <label class="inline">Auto-refresh
+          <select id="refreshRate">
+            <option value="0">Off</option><option value="5">Every 5 s</option><option value="10">Every 10 s</option><option value="15">Every 15 s</option><option value="30">Every 30 s</option><option value="60">Every 60 s</option>
+          </select>
+        </label>
+      </div>
+      <label class="switch"><input type="checkbox" id="notifyToggle"> <span>Browser notifications for new mail</span></label>
+      <p class="small" id="notifyState"></p>
+      <label class="switch"><input type="checkbox" id="remoteImgToggle"> <span>Load remote images in emails by default (off = blocks tracking pixels)</span></label>
+      <label class="switch"><input type="checkbox" id="soundToggle"> <span>Play a soft beep on new mail</span></label>
+    </div>
+
+    <div class="card">
+      <h2 class="h3">🗂️ Backup &amp; privacy</h2>
+      <div class="row wrap">
+        <button class="btn btn-ghost" type="button" id="exportBtn">⬇️ Export settings</button>
+        <label class="switch small"><input type="checkbox" id="exportKeys"> <span>include API keys &amp; inbox tokens</span></label>
+        <label class="btn btn-ghost file-btn">⬆️ Import settings<input type="file" id="importFile" accept="application/json,.json" class="sr-only"></label>
+      </div>
+      <hr>
+      <button class="btn btn-danger" type="button" id="privacyWipeBtn">☢️ Privacy wipe: clear EVERYTHING</button>
+      <p class="small">Deletes every saved address, inbox token, API key, chat, memory, setting and offline cache from this browser. Can't be undone.</p>
+    </div>
+
+    <div class="card">
+      <h2 class="h3">⌨️ Keyboard shortcuts</h2>
+      <div id="shortcutsTable"></div>
+    </div>
+    <p class="small center">Bizzle's Burner Hub v4.20 · <a href="https://github.com/LeeHizzbt/bizzles-burner-hub" target="_blank" rel="noopener">source on GitHub</a></p>
+  </section>
+</main>
+
+<!-- Bizzy Bot floating bubble -->
+<button id="botFab" class="bot-fab" type="button" aria-label="Open Bizzy Bot chat" aria-expanded="false" aria-controls="botPanel">
+  <img src="img/bizzy-128.webp" alt="" width="64" height="64">
+  <span class="fab-dot" aria-hidden="true"></span>
+</button>
+<div id="botPanel" class="bot-panel" role="dialog" aria-label="Bizzy Bot chat" hidden>
+  <div id="chat" class="chat">
+    <div class="chat-head">
+      <img src="img/bizzy-128.webp" alt="Bizzy Bot avatar" width="40" height="40" class="chat-avatar">
+      <div class="chat-title"><b>Bizzy Bot</b><span class="small" id="chatStatus"></span></div>
+      <a class="icon-btn sm" href="#/bot" id="chatExpand" title="Open full page" aria-label="Open Bizzy Bot full page">⤢</a>
+      <button class="icon-btn sm" type="button" id="chatClear" title="Clear chat" aria-label="Clear chat">🧽</button>
+      <button class="icon-btn sm" type="button" id="chatClose" title="Close (Esc)" aria-label="Close chat">✕</button>
+    </div>
+    <div class="chat-log" id="chatLog" role="log" aria-live="polite" aria-label="Conversation"></div>
+    <form class="chat-form" id="chatForm" autocomplete="off">
+      <div class="chat-attach" id="chatAttach" hidden><img id="chatAttachImg" alt="Attached image preview"><button type="button" class="btn btn-xs" id="chatAttachRm" aria-label="Remove image">✕</button></div>
+      <div class="chat-row">
+        <label class="icon-btn" title="Attach image or screenshot" for="chatFile"><span aria-hidden="true">📎</span><span class="sr-only">Attach image</span></label>
+        <input type="file" id="chatFile" accept="image/*" class="sr-only">
+        <label for="chatInput" class="sr-only">Message Bizzy Bot</label>
+        <textarea id="chatInput" rows="1" placeholder="Ask Bizzy anything… (paste a screenshot too)"></textarea>
+        <button class="btn btn-primary" type="submit" id="chatSend" aria-label="Send">➤</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<dialog id="confirmDlg" class="dlg" aria-labelledby="confirmTitle">
+  <form method="dialog">
+    <h2 id="confirmTitle" class="h3"></h2>
+    <p id="confirmMsg"></p>
+    <div class="row end"><button class="btn btn-ghost" value="cancel" id="confirmCancel">Cancel</button><button class="btn btn-danger" value="ok" id="confirmOk">Do it</button></div>
+  </form>
+</dialog>
+<dialog id="shortcutsDlg" class="dlg" aria-labelledby="scTitle">
+  <form method="dialog">
+    <h2 id="scTitle" class="h3">⌨️ Keyboard shortcuts</h2>
+    <div id="shortcutsDlgBody"></div>
+    <div class="row end"><button class="btn" value="close">Close</button></div>
+  </form>
+</dialog>
+<dialog id="iosDlg" class="dlg" aria-labelledby="iosTitle">
+  <form method="dialog">
+    <h2 id="iosTitle" class="h3">Install on iPhone / iPad</h2>
+    <p>In Safari tap <b>Share</b> (square with arrow) → <b>Add to Home Screen</b>.</p>
+    <div class="row end"><button class="btn" value="close">Got it</button></div>
+  </form>
+</dialog>
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="js/vendor/purify.min.js"></script>
+<script src="js/vendor/marked.min.js"></script>
+<script src="js/vendor/qrcode.min.js"></script>
+<script src="js/store.js"></script>
+<script src="js/mail.js"></script>
+<script src="js/bot.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

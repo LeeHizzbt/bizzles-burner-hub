@@ -1,0 +1,24 @@
+{
+  "name": "Bizzle's Burner Hub v4.20",
+  "short_name": "Burner Hub",
+  "description": "Free real temp email with automatic provider fallback, plus Bizzy Bot, a bring-your-own-key AI helper.",
+  "id": "./",
+  "start_url": "./#/",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "categories": ["utilities", "productivity"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Temp Email Hub", "short_name": "Temp Mail", "url": "./#/mail", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Bizzy Bot", "short_name": "Bizzy", "url": "./#/bot", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] }
+  ]
+}
