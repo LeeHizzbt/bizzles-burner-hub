@@ -212,12 +212,18 @@
   }
   DOMPurify.addHook('afterSanitizeAttributes', node => { if (node.tagName === 'A') { node.setAttribute('target', '_blank'); node.setAttribute('rel', 'noopener noreferrer'); } });
 
+  // Replace the iframe instead of changing srcdoc: changing srcdoc adds joint-history entries that break the Back button.
+  function setFrame(doc) {
+    const old = $('#readerFrame'); const f = document.createElement('iframe');
+    ['id', 'title', 'sandbox', 'referrerpolicy'].forEach(a => f.setAttribute(a, old.getAttribute(a)));
+    f.srcdoc = doc; old.replaceWith(f);
+  }
   async function openMessage(id) {
     const a = active(); if (!a) { location.hash = '#/mail'; return; }
     const p = Mail.byId(a.provider);
     $('#reader').hidden = false; $('#readerSubject').textContent = 'Loading…'; $('#readerFrom').textContent = ''; $('#readerAtts').innerHTML = '';
-    $('#readerFrame').srcdoc = buildSrcdoc('', 'Loading…', false);
-    document.body.classList.add('reading');
+    setFrame(buildSrcdoc('', 'Loading…', false));
+    document.body.classList.add('reading'); window.scrollTo(0, 0);
     try {
       const m = await p.read(a, id); openMsg = m; showImages = !!S().remoteImages;
       const read = new Set(Store.read('readMsgs', [])); read.add(a.id + ':' + m.id); Store.write('readMsgs', Array.from(read).slice(-500));
@@ -229,7 +235,7 @@
   }
   function renderBody() {
     if (!openMsg) return;
-    $('#readerFrame').srcdoc = buildSrcdoc(openMsg.html, openMsg.text, showImages);
+    setFrame(buildSrcdoc(openMsg.html, openMsg.text, showImages));
     $('#imgToggleBtn').textContent = showImages ? '🚫 Block images' : '🖼️ Load images';
     $('#imgToggleBtn').hidden = !openMsg.html;
   }

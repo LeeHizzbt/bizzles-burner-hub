@@ -200,3 +200,5 @@ input:focus, select:focus, textarea:focus { border-color: var(--accent); }
 .dlg::backdrop { background: rgba(0,0,0,.6); backdrop-filter: blur(2px); }
 .toast { position: fixed; left: 50%; bottom: 100px; transform: translateX(-50%); z-index: 60; background: var(--bg3); color: var(--fg); border: 1px solid var(--accent); border-radius: 12px; padding: 10px 16px; box-shadow: 0 0 18px var(--glow); max-width: calc(100vw - 32px); font-weight: 600; }
 .toast[hidden] { display: none; }
+/* mobile/tablet reading mode: show only the open email */
+@media (max-width: 1023px) { body.reading .mail-grid > .mail-col:first-child, body.reading .inbox-card { display: none; } body.reading #readerFrame { height: calc(100dvh - 300px); } }
