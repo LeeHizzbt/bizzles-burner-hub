@@ -1,5 +1,5 @@
 /* Service worker: caches the same-origin app shell only. Cross-origin API calls (temp mail, AI) are never intercepted or cached. */
-const CACHE = 'burner-hub-v4.20.1';
+const CACHE = 'burner-hub-v4.20.2';
 const SHELL = ['./', './index.html', './css/app.css', './js/store.js', './js/mail.js', './js/bot.js', './js/app.js',
   './js/vendor/purify.min.js', './js/vendor/marked.min.js', './js/vendor/qrcode.min.js', './fonts/Orbitron.ttf',
   './manifest.webmanifest', './img/logo-256.webp', './img/bizzy-128.webp', './img/bizzy-256.webp',
